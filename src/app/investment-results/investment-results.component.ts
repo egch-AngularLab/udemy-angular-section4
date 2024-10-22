@@ -1,5 +1,5 @@
 import { CurrencyPipe } from '@angular/common';
-import { Component, Input, input} from '@angular/core';
+import { Component, input} from '@angular/core';
 import { InvestmentResult } from '../investment-output.model';
 
 @Component({
@@ -13,6 +13,8 @@ export class InvestmentResultsComponent {
   //results = input()
 
   //? means optional
-  @Input() results?: InvestmentResult[];  //it's an array of values
+  //@Input() results?: InvestmentResult[];  //it's an array of values
+
+  results = input<InvestmentResult[] | undefined>();
 
 }
