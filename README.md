@@ -8,6 +8,14 @@
 $ ng g c header --skip-tests
 $ ng g c user-input --skip-tests
 ```
+### Importing type
+```javascript
+import type { InvestmentInput } from './investment-input.model';
+```
+
+```javascript
+  @Output() calculate = new EventEmitter<InvestmentInput>();
+```
 
 ## Default Docs
 
