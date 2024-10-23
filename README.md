@@ -9,13 +9,32 @@ $ ng g c header --skip-tests
 $ ng g c user-input --skip-tests
 ```
 ### Importing type
-```javascript
+```typescript
 import type { InvestmentInput } from './investment-input.model';
 ```
 
-```javascript
+```typescript
   @Output() calculate = new EventEmitter<InvestmentInput>();
 ```
+
+### Services
+```typescript
+@Injectable({providedIn: 'root'})
+export class InvestmentService {}
+```
+
+```typescript
+ constructor(private investmentService: InvestmentService){}
+```
+
+
+```typescript
+export class InvestmentResultsComponent {
+  private investmentService = inject(InvestmentService);
+}
+```
+
+
 
 ## Default Docs
 

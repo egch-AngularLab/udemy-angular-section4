@@ -1,6 +1,6 @@
 <app-header></app-header>
 <!-- with $event I take the emitted event -->
-<app-user-input  (calculate)="onCalculateInvestmentResults($event)"/>
+<app-user-input  />
 <!-- now using signal so I need the parenthesis -->
-<app-investment-results [results]="resultsData()"/>
+<app-investment-results />
 
