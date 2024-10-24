@@ -5,7 +5,7 @@ import { InvestmentResult } from "./investment-output.model";
 
 @Injectable({providedIn: 'root'})
 export class InvestmentService {
-    resultsData?: InvestmentResult[];
+    resultsData = signal<InvestmentResult[] | undefined>(undefined)
 
     calculateInvestmentResults(data: InvestmentInput) {
         //destructuring assignment
@@ -28,7 +28,7 @@ export class InvestmentService {
             totalAmountInvested: initialInvestment + annualInvestment * year,
           });
         }
-        this.resultsData = annualData;
+        this.resultsData.set(annualData);
       }
     
 
